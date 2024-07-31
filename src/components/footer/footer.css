@@ -1,0 +1,26 @@
+.footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 10%;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+  
+.footer-button {
+    background: none;
+    border: none;
+    text-align: center;
+    font-size: 1em;
+    text-decoration: none; /* Quita el subrayado */
+  color: black; /* Cambia el color del texto */
+  }
+  
+.footer-button .button-icon {
+    display: block;
+    margin: 0 auto;
+    width: 24px;  /* Ajusta el tamaño de las imágenes según sea necesario */
+    height: 24px;
+  }
+  
