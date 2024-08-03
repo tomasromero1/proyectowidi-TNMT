@@ -24,3 +24,8 @@
     height: 24px;
   }
   
+.footer-button a {
+    text-decoration: none;  /* Quita el subrayado */
+    color: black;           /* Cambia el color del texto */
+    font-weight: bold;      /* Opcional: hace el texto más destacado */
+  }

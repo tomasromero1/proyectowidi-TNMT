@@ -1,0 +1,39 @@
+select=
+
+const {firestore } = this.props;
+
+const ref = firestore.collection("/venta")
+.where("sucursal", "==", "LOPEZMATEOS")
+.orderBy("numeroOrden")
+.get()
+.then(function(querySnapshot) {
+    querySnapshot.forEach(function(doc) {
+        console.log(doc.id, " => ", doc.data());
+    });
+}).catch(function(error){
+    console.log("Error getting document:", error);
+})
+
+
+archivo diferente:
+
+import { useState, useEffect } from 'react';
+import BookList from '../components/BookList';
+import BookForm from '../components/BookForm';
+import { db } from '../firebase/config';
+import { collection, getDocs } from 'firebase/firestore';
+
+export default function Home() {
+    const [books, setBooks] = useState([]);
+
+    useEffect(() => {
+        const bookRef = collection(db, 'books');
+        getDocs(booksRef).then((snapshot) => {
+            let results = [];
+            snapshot.docs,forEach((doc) => {
+                   results.push({ id: doc.id, ...doc.data() });
+            });
+            setBooks(results);
+        });
+    });
+},  []);
