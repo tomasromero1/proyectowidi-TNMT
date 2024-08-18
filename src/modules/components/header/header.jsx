@@ -1,12 +1,13 @@
 import './header.css'
 
-import GoogleIcon from '../../logo.svg';
+import GoogleIcon from '../../../logo.svg';
+import logo from '../../../img/logo.png';
 
 export function Header () {
     return(
       
     <header class="header">
-    <a href="" class="header-left"></a>
+    <img src={logo} alt="logo" class="header-left" />
     <h1 class="header-title">APP ESI</h1>
     <a href="" class="header-button">
     <img src={GoogleIcon} alt="Inicio" class="button-icon" />

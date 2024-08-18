@@ -1,13 +1,13 @@
 import './footer.css'
 
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom'
-import Home from '../../home';
-import Info from '../../informacion';
-import Play from '../../play';
+import Home from '../../../home';
+import Info from '../../../informacion';
+import Play from '../../../play';
 
-import homeIcon from '../../logo.svg';  
-import infoIcon from '../../logo.svg';  
-import playIcon from '../../logo.svg';
+import homeIcon from '../../../logo.svg';  
+import infoIcon from '../../../logo.svg';  
+import playIcon from '../../../logo.svg';
 
 
 export function Footer () {

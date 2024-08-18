@@ -1,6 +1,6 @@
 import './App.css';
-import { Header } from "./components/header/header";
-import { Footer } from "./components/footer/footer";
+import { Header } from "./modules/components/header/header";
+import { Footer } from "./modules/components/footer/footer";
 import React from 'react';
 
 

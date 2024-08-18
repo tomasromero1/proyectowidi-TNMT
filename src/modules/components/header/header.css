@@ -48,6 +48,7 @@
   margin-right: auto; /* Empuja el título hacia el centro */
   text-decoration: none; 
   color: black; 
+  height: 60px;
 }
 
 .header-title {
