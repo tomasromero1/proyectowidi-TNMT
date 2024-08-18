@@ -1,7 +1,7 @@
 import './header.css'
 
-import GoogleIcon from '../../../logo.svg';
-import logo from '../../../img/logo.png';
+import GoogleIcon from '../img/usuario_logo.png';
+import logo from '../img/logo.png';
 
 export function Header () {
     return(

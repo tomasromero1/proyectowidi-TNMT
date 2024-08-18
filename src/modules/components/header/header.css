@@ -35,7 +35,7 @@
 
 .header {
   display: flex;
-  justify-content: space-between; /* Para que los elementos se distribuyan en el espacio */
+  justify-content: space-between;
   align-items: center;
   height: 10%;
   width: 100%;
@@ -44,8 +44,8 @@
 }
 
 .header-left {
-  flex: 0 0 auto; /* El elemento de la izquierda no crecerá ni encogerá */
-  margin-right: auto; /* Empuja el título hacia el centro */
+  flex: 0 0 auto; 
+  margin-right: auto;
   text-decoration: none; 
   color: black; 
   height: 60px;
@@ -57,7 +57,7 @@
 }
 
 .header-button {
-  flex: 0 0 auto; /* El elemento de la derecha no crecerá ni encogerá */
+  flex: 0 0 auto; 
   display: flex;
   flex-direction: column; 
   align-items: center; 
