@@ -13,19 +13,19 @@
     border: none;
     text-align: center;
     font-size: 1em;
-    text-decoration: none; /* Quita el subrayado */
-  color: black; /* Cambia el color del texto */
+    text-decoration: none; 
+  color: black; 
   }
   
 .footer-button .button-icon {
     display: block;
     margin: 0 auto;
-    width: 24px;  /* Ajusta el tamaño de las imágenes según sea necesario */
+    width: 24px;  
     height: 24px;
   }
   
 .footer-button a {
-    text-decoration: none;  /* Quita el subrayado */
-    color: black;           /* Cambia el color del texto */
-    font-weight: bold;      /* Opcional: hace el texto más destacado */
+    text-decoration: none;  
+    color: black;           
+    font-weight: bold;
   }

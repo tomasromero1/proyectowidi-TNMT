@@ -5,9 +5,9 @@ import Home from '../../../home';
 import Info from '../../../informacion';
 import Play from '../../../play';
 
-import homeIcon from '../../../logo.svg';  
-import infoIcon from '../../../logo.svg';  
-import playIcon from '../../../logo.svg';
+import homeIcon from '../img/icon_home.png';  
+import infoIcon from '../img/book_icon.png';  
+import playIcon from '../img/joystick_icon.png';
 
 
 export function Footer () {
