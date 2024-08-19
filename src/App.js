@@ -3,12 +3,14 @@ import { Header } from "./modules/components/header/header";
 import { Footer } from "./modules/components/footer/footer";
 import React from 'react';
 
-
 function App() {
   return (
     <div className="App">
       <Header/>
-      <Footer/>
+      <div className="content-container">
+        {}
+        <Footer/>
+      </div>
     </div>
   );
 }
