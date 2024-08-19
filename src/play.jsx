@@ -1,73 +1,101 @@
-import './play.css';
 import React, { useState } from 'react';
+import './play.css'
 
 const questions = [
-  { 
-    id: 1, 
-    question: "¿La ESI es obligatoria en todas las escuelas?", 
-    options: ["Sí", "No", "No se"], 
-    correctAnswer: "Sí" 
+  {
+    question: "El sistema sexo/género se basa en una lógica binaria",
+    options: ["Verdadero", "Falso"],
+    correct: "Verdadero"
   },
-  { 
-    id: 2, 
-    question: "¿La ESI solo trata sobre sexualidad?", 
-    options: ["Sí", "No"], 
-    correctAnswer: "No" 
+  {
+    question: "La identidad de género siempre responde al género asignado al nacer",
+    options: ["Verdadero", "Falso"],
+    correct: "Falso"
   },
-  //
+  {
+    question: "¿El término sexo está asociado a características biológicas?",
+    options: ["Verdadero", "Falso"],
+    correct: "Verdadero"
+  },
+  {
+    question: "¿El género está determinado por características biológicas?",
+    options: ["Verdadero", "Falso"],
+    correct: "Falso"
+  },
+  {
+    question: "¿Todas las personas tienen derecho a ser tratadas como se autoperciben?",
+    options: ["Verdadero", "Falso"],
+    correct: "Verdadero"
+  },
+  // Agrega más preguntas aquí
 ];
 
-function Chat() {
+const Question = ({ question, options, onAnswer, feedback }) => {
+  return (
+    <div>
+      <div className="question-container">
+        <div className="question-box">
+          <h2>{question}</h2>
+        </div>
+      </div>
+      <div className="options-container">
+        {options.map((option, index) => (
+          <button key={index} onClick={() => onAnswer(option)}>
+            {option}
+          </button>
+        ))}
+      </div>
+      {feedback && (
+        <div className="feedback-container">
+          {feedback.isCorrect
+            ? <p>¡Correcto!</p>
+            : <p>Incorrecto. La respuesta correcta es: {feedback.correctAnswer}</p>}
+        </div>
+      )}
+    </div>
+  );
+};
+
+const Quiz = () => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-  const [messages, setMessages] = useState([]);
+  const [answeredQuestions, setAnsweredQuestions] = useState([]);
 
-  const handleAnswerSelection = (selectedOption) => {
+  const handleAnswer = (selectedOption) => {
     const currentQuestion = questions[currentQuestionIndex];
-    const userMessage = { text: selectedOption, isUser: true };
-    let newMessages = [...messages, userMessage];
+    const isCorrect = selectedOption === currentQuestion.correct;
 
-    if (selectedOption === currentQuestion.correctAnswer) {
-      newMessages = [...newMessages, { text: "¡Correcto!", isUser: false }];
-    } else {
-      newMessages = [...newMessages, { text: "Incorrecto. La respuesta correcta es: " + currentQuestion.correctAnswer, isUser: false }];
-    }
+    // Guarda la pregunta respondida junto con la retroalimentación
+    setAnsweredQuestions([...answeredQuestions, { 
+      question: currentQuestion.question, 
+      options: currentQuestion.options,
+      feedback: { isCorrect, correctAnswer: currentQuestion.correct } 
+    }]);
 
-    setMessages(newMessages);
-
-    setTimeout(() => {
-      setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
-    }, 1000);
+    // Avanza a la siguiente pregunta
+    setCurrentQuestionIndex(currentQuestionIndex + 1);
   };
 
   return (
-    <div className="chat-container">
-      <div className="chat-window">
-        {messages.map((msg, index) => (
-          <div key={index} className={`chat-bubble ${msg.isUser ? 'user' : 'bot'}`}>
-            {msg.text}
-          </div>
-        ))}
-        {currentQuestionIndex < questions.length && (
-          <div className="chat-bubble bot">
-            {questions[currentQuestionIndex].question}
-          </div>
-        )}
-      </div>
+    <div>
+      {answeredQuestions.map((q, index) => (
+        <Question
+          key={index}
+          question={q.question}
+          options={q.options}
+          onAnswer={() => {}}
+          feedback={q.feedback}
+        />
+      ))}
       {currentQuestionIndex < questions.length && (
-        <div className="options-container">
-          {questions[currentQuestionIndex].options.map((option, index) => (
-            <button 
-              key={index} 
-              onClick={() => handleAnswerSelection(option)}
-            >
-              {option}
-            </button>
-          ))}
-        </div>
+        <Question
+          question={questions[currentQuestionIndex].question}
+          options={questions[currentQuestionIndex].options}
+          onAnswer={handleAnswer}
+          feedback={null} // No mostrar retroalimentación para la pregunta actual hasta que sea respondida
+        />
       )}
-      
     </div>
   );
-}
+};
 
-export default Chat;
+export default Quiz;
