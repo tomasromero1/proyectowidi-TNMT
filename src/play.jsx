@@ -27,7 +27,7 @@ const questions = [
     options: ["Verdadero", "Falso"],
     correct: "Verdadero"
   },
-  // Agrega más preguntas aquí
+  //
 ];
 
 const Question = ({ question, options, onAnswer, feedback }) => {
@@ -64,14 +64,12 @@ const Quiz = () => {
     const currentQuestion = questions[currentQuestionIndex];
     const isCorrect = selectedOption === currentQuestion.correct;
 
-    // Guarda la pregunta respondida junto con la retroalimentación
     setAnsweredQuestions([...answeredQuestions, { 
       question: currentQuestion.question, 
       options: currentQuestion.options,
       feedback: { isCorrect, correctAnswer: currentQuestion.correct } 
     }]);
 
-    // Avanza a la siguiente pregunta
     setCurrentQuestionIndex(currentQuestionIndex + 1);
   };
 
@@ -91,7 +89,7 @@ const Quiz = () => {
           question={questions[currentQuestionIndex].question}
           options={questions[currentQuestionIndex].options}
           onAnswer={handleAnswer}
-          feedback={null} // No mostrar retroalimentación para la pregunta actual hasta que sea respondida
+          feedback={null}
         />
       )}
     </div>
