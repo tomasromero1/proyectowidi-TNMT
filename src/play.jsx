@@ -1,34 +1,7 @@
-import React, { useState } from 'react';
-import './play.css'
-
-const questions = [
-  {
-    question: "El sistema sexo/género se basa en una lógica binaria",
-    options: ["Verdadero", "Falso"],
-    correct: "Verdadero"
-  },
-  {
-    question: "La identidad de género siempre responde al género asignado al nacer",
-    options: ["Verdadero", "Falso"],
-    correct: "Falso"
-  },
-  {
-    question: "¿El término sexo está asociado a características biológicas?",
-    options: ["Verdadero", "Falso"],
-    correct: "Verdadero"
-  },
-  {
-    question: "¿El género está determinado por características biológicas?",
-    options: ["Verdadero", "Falso"],
-    correct: "Falso"
-  },
-  {
-    question: "¿Todas las personas tienen derecho a ser tratadas como se autoperciben?",
-    options: ["Verdadero", "Falso"],
-    correct: "Verdadero"
-  },
-  //
-];
+import React, { useState, useEffect } from 'react';
+import './play.css';
+import { getDocs, collection } from 'firebase/firestore';
+import { db } from './modules/components/firebase/firebase.config';
 
 const Question = ({ question, options, onAnswer, feedback }) => {
   return (
@@ -57,8 +30,23 @@ const Question = ({ question, options, onAnswer, feedback }) => {
 };
 
 const Quiz = () => {
+  const [questions, setQuestions] = useState([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [answeredQuestions, setAnsweredQuestions] = useState([]);
+
+  const fetchQuestions = async () => {
+    const querySnapshot = await getDocs(collection(db, "preguntas")); 
+    const fetchedQuestions = querySnapshot.docs.map(doc => ({
+      question: doc.data().pregunta,    
+      options: doc.data().opciones,     
+      correct: doc.data().correcta      
+    }));
+    setQuestions(fetchedQuestions);
+  };
+
+  useEffect(() => {
+    fetchQuestions(); 
+  }, []);
 
   const handleAnswer = (selectedOption) => {
     const currentQuestion = questions[currentQuestionIndex];
@@ -86,8 +74,8 @@ const Quiz = () => {
       ))}
       {currentQuestionIndex < questions.length && (
         <Question
-          question={questions[currentQuestionIndex].question}
-          options={questions[currentQuestionIndex].options}
+          question={questions[currentQuestionIndex]?.question}
+          options={questions[currentQuestionIndex]?.options}
           onAnswer={handleAnswer}
           feedback={null}
         />
