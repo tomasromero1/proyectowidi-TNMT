@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './home';
 import Info from './informacion';
 import Play from './play';
-import Boton from './modules/components/alumnos/usuario';
+import Boton from './modules/components/usuarios/usuario';
 
 function App() {
   return (
