@@ -1,5 +1,5 @@
 import React from 'react';
-import { auth, provider } from '../firebase/firebase.config'; // Asegúrate de que la ruta sea correcta
+import { auth, provider } from '../firebase/Firebase.config.js'; // Asegúrate de que la ruta sea correcta
 import { signInWithPopup, signOut } from "firebase/auth";
 
 const GoogleLogin = () => {

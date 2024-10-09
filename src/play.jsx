@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import './play.css';
+import './Play.css';
 import { getDocs, collection } from 'firebase/firestore';
-import { db } from './modules/components/firebase/firebase.config';
+import { db } from './modules/components/firebase/Firebase.config.js';
 
 const Question = ({ question, options = [], onAnswer, feedback }) => {
   return (
@@ -39,7 +39,7 @@ const Quiz = () => {
   const [questions, setQuestions] = useState([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [answeredQuestions, setAnsweredQuestions] = useState([]);
-  const [loading, setLoading] = useState(true); // Para manejar el estado de carga
+  const [loading, setLoading] = useState(true); 
 
   const fetchQuestions = async () => {
     try {
@@ -50,10 +50,10 @@ const Quiz = () => {
         correct: doc.data().correcta,
       }));
       setQuestions(fetchedQuestions);
-      setLoading(false); // Cuando terminan de cargarse las preguntas
+      setLoading(false); 
     } catch (error) {
       console.error("Error fetching questions: ", error);
-      setLoading(false); // En caso de error, detener la carga
+      setLoading(false); 
     }
   };
 
@@ -82,7 +82,7 @@ const Quiz = () => {
   };
 
   if (loading) {
-    return <div>Loading...</div>; // Mostrar mientras cargan las preguntas
+    return <div>Loading...</div>;
   }
 
   return (
@@ -92,7 +92,7 @@ const Quiz = () => {
           key={index}
           question={q.question}
           options={q.options}
-          onAnswer={() => {}} // No hacemos nada porque ya está respondido
+          onAnswer={() => {}} 
           feedback={q.feedback}
         />
       ))}
@@ -101,7 +101,7 @@ const Quiz = () => {
           question={questions[currentQuestionIndex]?.question}
           options={questions[currentQuestionIndex]?.options}
           onAnswer={handleAnswer}
-          feedback={null} // No hay feedback hasta que el usuario responda
+          feedback={null}
         />
       )}
     </div>

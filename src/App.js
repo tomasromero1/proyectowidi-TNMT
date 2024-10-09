@@ -1,12 +1,12 @@
 import './App.css';
 import { Header } from "./modules/components/header/header";
-import { Footer } from "./modules/components/footer/footer";
+import { Footer } from "./modules/components/footer/Footer";
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Home from './home';
-import Info from './informacion';
+import Home from './Home';
+import Info from './Informacion';
 import Play from './play';
-import Boton from './modules/components/usuarios/usuario';
+import Boton from './modules/components/usuarios/Usuario';
 
 function App() {
   return (
@@ -15,10 +15,10 @@ function App() {
         <Header />
         <div className="content-container">
           <Routes>
-            <Route path="/home" element={<Home />} />
-            <Route path="/informacion" element={<Info />} />
-            <Route path="/play" element={<Play />} />
-            <Route path="/usuario" element={<Boton />} />
+            <Route path="/Home" element={<Home />} />
+            <Route path="/Informacion" element={<Info />} />
+            <Route path="/Play" element={<Play />} />
+            <Route path="/Usuario" element={<Boton />} />
           </Routes>
         </div>
         <Footer />
