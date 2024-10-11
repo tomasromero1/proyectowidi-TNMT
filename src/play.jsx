@@ -40,6 +40,7 @@ const Quiz = () => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [answeredQuestions, setAnsweredQuestions] = useState([]);
   const [loading, setLoading] = useState(true); 
+  const [quizCompleted, setQuizCompleted] = useState(false); // Nuevo estado para marcar si el quiz ha sido completado
 
   const fetchQuestions = async () => {
     try {
@@ -77,7 +78,7 @@ const Quiz = () => {
     if (currentQuestionIndex < questions.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
     } else {
-      console.log("Quiz completado");
+      setQuizCompleted(true); // Marcamos el quiz como completado
     }
   };
 
@@ -96,13 +97,19 @@ const Quiz = () => {
           feedback={q.feedback}
         />
       ))}
-      {currentQuestionIndex < questions.length && (
+      {!quizCompleted && currentQuestionIndex < questions.length && (
         <Question
           question={questions[currentQuestionIndex]?.question}
           options={questions[currentQuestionIndex]?.options}
           onAnswer={handleAnswer}
           feedback={null}
         />
+      )}
+      {quizCompleted && (
+        <div className="quiz-completed">
+          <h2>¡Has completado el quiz!</h2>
+          <p>Gracias por participar.</p>
+        </div>
       )}
     </div>
   );
