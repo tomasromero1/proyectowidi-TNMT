@@ -1,27 +1,24 @@
-import React, { useState, useEffect } from 'react';
-import { auth, provider } from '../firebase/Firebase.config.js';
-import { signInWithPopup, signOut, onAuthStateChanged } from "firebase/auth";
 import './Usuario.css';
+import React, { useState, useEffect } from 'react';
+import { auth, provider } from '../firebase/Firebase.config.js'; 
+import { signInWithPopup, signOut, onAuthStateChanged } from "firebase/auth";
 
 const GoogleLogin = () => {
   const [user, setUser] = useState(null);
-  const [showLogoutModal, setShowLogoutModal] = useState(false); // Estado para controlar el modal
+  const [showLogoutModal, setShowLogoutModal] = useState(false);
+  const [message, setMessage] = useState(""); 
 
   // Función para iniciar sesión
   const handleLogin = async () => {
     try {
       const result = await signInWithPopup(auth, provider);
       const loggedInUser = result.user;
-      setUser(loggedInUser); 
-      console.log("Usuario logueado: ", loggedInUser);
+      setMessage("¡Inicio de sesión exitoso!");
+      setUser(loggedInUser);
+      setTimeout(() => setMessage(""), 4000);
     } catch (error) {
       console.error("Error al iniciar sesión con Google: ", error);
     }
-  };
-
-  // Función para mostrar el modal de confirmación de cierre de sesión
-  const handleShowLogoutModal = () => {
-    setShowLogoutModal(true); // Mostrar el modal
   };
 
   // Función para cerrar sesión
@@ -29,16 +26,11 @@ const GoogleLogin = () => {
     try {
       await signOut(auth);
       setUser(null); 
-      setShowLogoutModal(false); // Cerrar el modal después de cerrar sesión
+      setShowLogoutModal(false);
       console.log("Sesión cerrada");
     } catch (error) {
       console.error("Error al cerrar sesión: ", error);
     }
-  };
-
-  // Función para cancelar el cierre de sesión
-  const handleCancelLogout = () => {
-    setShowLogoutModal(false); // Ocultar el modal sin cerrar sesión
   };
 
   // Mantener la sesión activa al cambiar de pantallas
@@ -56,22 +48,25 @@ const GoogleLogin = () => {
 
   return (
     <div>
+      {message && <p className="message">{message}</p>}
+
       {user ? (
         <div>
-          <p>Usuario: {user.email}</p> {/* Mostrar el correo del usuario */}
-          <button onClick={handleShowLogoutModal}>Cerrar sesión</button>
+          <p>Usuario: {user.email}</p>
+          <button onClick={() => setShowLogoutModal(true)}>Cerrar sesión</button>
         </div>
       ) : (
-        <button onClick={handleLogin}>Iniciar sesión con Google</button>
+        <div>
+          <button onClick={handleLogin}>Iniciar sesión con Google</button>
+        </div>
       )}
 
-      {/* Modal de confirmación */}
       {showLogoutModal && (
         <div className="modal">
           <div className="modal-content">
             <p>¿Salir de tu cuenta?</p>
-            <button onClick={handleCancelLogout}>Cancelar</button>
-            <button onClick={handleLogout}>Salir</button>
+            <button onClick={() => setShowLogoutModal(false)} className='botones'>Cancelar</button>
+            <button onClick={handleLogout} className='botones'>Salir</button>
           </div>
         </div>
       )}
@@ -80,3 +75,4 @@ const GoogleLogin = () => {
 };
 
 export default GoogleLogin;
+

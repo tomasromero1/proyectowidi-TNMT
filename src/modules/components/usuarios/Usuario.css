@@ -1,4 +1,13 @@
-.modal {
+.message {
+    color: black;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  .modal {
     position: fixed;
     top: 0;
     left: 0;
@@ -16,7 +25,7 @@
     text-align: center;
   }
   
-  button {
+  .botones {
     margin: 10px;
     padding: 10px;
     cursor: pointer;
