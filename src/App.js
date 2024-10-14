@@ -3,8 +3,8 @@ import { Header } from "./modules/components/header/header";
 import { Footer } from "./modules/components/footer/Footer";
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Home from './Home';
-import Info from './Informacion';
+import Home from './home';
+import Info from './informacion';
 import Play from './play';
 import Boton from './modules/components/usuarios/Usuario';
 
