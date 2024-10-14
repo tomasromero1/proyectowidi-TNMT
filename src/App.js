@@ -1,6 +1,6 @@
 import './App.css';
 import { Header } from "./modules/components/header/header";
-import { Footer } from "./modules/components/footer/Footer";
+import { Footer } from "./modules/components/footer/footer";
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './home';
