@@ -8,7 +8,7 @@ export function Footer() {
     return (
         <footer className="footer">
             <div className="footer-button">
-                <Link to="/Home">
+                <Link to="/">
                     <img src={homeIcon} alt="Inicio" className="button-icon" />
                     Inicio
                 </Link>
