@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './Play.css';
 import { getDocs, collection } from 'firebase/firestore';
 import { db } from './modules/components/firebase/Firebase.config.js';
+import PulseLoader from 'react-spinners/PulseLoader'; // Importamos el componente
 
 const Question = ({ question, options = [], onAnswer, feedback }) => {
   return (
@@ -83,7 +84,11 @@ const Quiz = () => {
   };
 
   if (loading) {
-    return <div>Loading...</div>;
+    return (
+      <div className="loader-container"> 
+        <PulseLoader color={"#36d7b7"} loading={loading} size={15} /> 
+      </div>
+    );
   }
 
   return (
