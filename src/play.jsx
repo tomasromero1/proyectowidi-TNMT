@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './Play.css';
 import { getDocs, collection } from 'firebase/firestore';
 import { db } from './modules/components/firebase/Firebase.config.js';
-import PulseLoader from 'react-spinners/PulseLoader'; // Importamos el componente
+import PulseLoader from 'react-spinners/PulseLoader';
 
 const Question = ({ question, options = [], onAnswer, feedback }) => {
   return (
@@ -41,7 +41,7 @@ const Quiz = () => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [answeredQuestions, setAnsweredQuestions] = useState([]);
   const [loading, setLoading] = useState(true); 
-  const [quizCompleted, setQuizCompleted] = useState(false); // Nuevo estado para marcar si el quiz ha sido completado
+  const [quizCompleted, setQuizCompleted] = useState(false);
 
   const fetchQuestions = async () => {
     try {
@@ -79,7 +79,7 @@ const Quiz = () => {
     if (currentQuestionIndex < questions.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
     } else {
-      setQuizCompleted(true); // Marcamos el quiz como completado
+      setQuizCompleted(true); 
     }
   };
 
