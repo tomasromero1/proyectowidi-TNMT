@@ -79,3 +79,19 @@ button:active {
 .close-button:hover {
   color: red;
 }
+
+.reset-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #000;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 0;
+  transition: background-color 0.3s;
+}
+
+.reset-button:hover {
+  background-color: #444;
+}

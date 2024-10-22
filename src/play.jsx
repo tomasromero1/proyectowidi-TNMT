@@ -88,6 +88,13 @@ const Quiz = () => {
     setShowCompletionMessage(false);
   };
 
+  const resetQuiz = () => {
+    setCurrentQuestionIndex(0);
+    setAnsweredQuestions([]);
+    setQuizCompleted(false);
+    setShowCompletionMessage(true);
+  };
+
   if (loading) {
     return (
       <div className="loader-container"> 
@@ -122,6 +129,7 @@ const Quiz = () => {
             <h2>¡Has completado el quiz!</h2>
             <p>Respondiste correctamente {answeredQuestions.filter(q => q.feedback.isCorrect).length} de {questions.length} preguntas.</p>
             <p>Gracias por participar.</p>
+            <button className="reset-button" onClick={resetQuiz}>Reiniciar Quiz</button>
           </div>
         </div>
       )}
