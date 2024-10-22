@@ -28,7 +28,7 @@ const Question = ({ question, options = [], onAnswer, feedback }) => {
           {feedback.isCorrect ? (
             <p>¡Correcto!</p>
           ) : (
-            <p>Incorrecto. La respuesta correcta es: {feedback.correctAnswer}</p>
+            <p>Incorrecto.</p>
           )}
         </div>
       )}
@@ -42,6 +42,7 @@ const Quiz = () => {
   const [answeredQuestions, setAnsweredQuestions] = useState([]);
   const [loading, setLoading] = useState(true); 
   const [quizCompleted, setQuizCompleted] = useState(false);
+  const [showCompletionMessage, setShowCompletionMessage] = useState(true);
 
   const fetchQuestions = async () => {
     try {
@@ -83,6 +84,10 @@ const Quiz = () => {
     }
   };
 
+  const closeCompletionMessage = () => {
+    setShowCompletionMessage(false);
+  };
+
   if (loading) {
     return (
       <div className="loader-container"> 
@@ -110,10 +115,14 @@ const Quiz = () => {
           feedback={null}
         />
       )}
-      {quizCompleted && (
-        <div className="quiz-completed">
-          <h2>¡Has completado el quiz!</h2>
-          <p>Gracias por participar.</p>
+      {quizCompleted && showCompletionMessage && (
+        <div className="quiz-completed-overlay">
+          <div className="quiz-completed-window">
+            <button className="close-button" onClick={closeCompletionMessage}>✖</button>
+            <h2>¡Has completado el quiz!</h2>
+            <p>Respondiste correctamente {answeredQuestions.filter(q => q.feedback.isCorrect).length} de {questions.length} preguntas.</p>
+            <p>Gracias por participar.</p>
+          </div>
         </div>
       )}
     </div>
