@@ -3,12 +3,14 @@ import React, { useState, useEffect } from 'react';
 import { auth, provider, db } from '../firebase/Firebase.config.js'; 
 import { signInWithPopup, signOut, onAuthStateChanged } from "firebase/auth";
 import { doc, setDoc, getDoc } from 'firebase/firestore';
+import { useNavigate } from 'react-router-dom';
 
 const GoogleLogin = () => {
   const [user, setUser] = useState(null);
   const [role, setRole] = useState(null);
   const [showLogoutModal, setShowLogoutModal] = useState(false);
   const [message, setMessage] = useState(""); 
+  const navigate = useNavigate();
 
   const handleLogin = async () => {
     try {
@@ -77,6 +79,7 @@ const GoogleLogin = () => {
           {role === "admin" && (
             <div>
               <h3>Panel de administración</h3>
+              <button onClick={() => navigate('/User')}>Gestionar Usuarios</button>
               <p>Acceso al CRUD de preguntas</p>
             </div>
           )}

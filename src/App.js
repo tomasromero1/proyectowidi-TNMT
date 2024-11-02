@@ -7,6 +7,7 @@ import Home from './Home';
 import Info from './informacion';
 import Play from './play';
 import Boton from './modules/components/usuarios/Usuario';
+import UserManagement from './modules/components/CRUD/user';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
             <Route path="/Informacion" element={<Info />} />
             <Route path="/Play" element={<Play />} />
             <Route path="/Usuario" element={<Boton />} />
+            <Route path="/User" element={<UserManagement />} />
           </Routes>
         </div>
         <Footer />
