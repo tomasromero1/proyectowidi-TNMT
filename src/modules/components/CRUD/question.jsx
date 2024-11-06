@@ -11,4 +11,22 @@ useEffect(() => {
     .catch(error => console.error(error));
 }, []);
 
+return (
+    <div>
+    <h2>Preguntas y Respuestas</h2>
+    <ul>
+        {preguntas.map(pregunta => (
+        <li key={pregunta.id}>
+            <strong>{pregunta.pregunta}</strong>
+            <ul>
+            {pregunta.respuestas.map(respuesta => (
+                <li key={respuesta.id}>{respuesta.texto}</li>
+            ))}
+            </ul>
+        </li>
+        ))}
+    </ul>
+    </div>
+);
 }
+export default PreguntasRespuestas;
