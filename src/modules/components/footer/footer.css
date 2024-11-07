@@ -32,3 +32,15 @@
   color: black;           
   font-weight: bold;
 } 
+
+/*vista en telefonos*/
+
+@media (max-width: 768px) {
+.footer{
+  height: 10%;
+}
+.footer-button .button-icon{
+  width: 34px;  
+  height: 34px;
+}
+}
