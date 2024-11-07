@@ -42,3 +42,24 @@
   width: 24px;  
   height: 24px;
 }
+
+/*vista en telefonos*/
+
+@media (max-width: 768px) {
+  .header{
+    height: 11%;
+  } 
+  .header-left {
+    height: 75%;
+  }
+  .header-title {
+    
+  }
+  .header-button {
+    font-size: 15px;
+  }
+  .header-button .button-icon {
+    width: 30px;  
+    height: 30px;
+  }
+}
