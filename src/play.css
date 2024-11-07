@@ -95,3 +95,14 @@ button:active {
 .reset-button:hover {
   background-color: #444;
 }
+
+/*vista en telefonos*/
+
+@media (max-width: 768px) {
+  .question-container{
+    margin-top: 8%;
+  }
+  .options-container{
+    margin-bottom: 8%;
+  }
+}
