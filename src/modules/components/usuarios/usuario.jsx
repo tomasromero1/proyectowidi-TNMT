@@ -80,7 +80,7 @@ const GoogleLogin = () => {
             <div>
               <h3>Panel de administración</h3>
               <button onClick={() => navigate('/User')}>Gestionar Usuarios</button>
-              <p>Acceso al CRUD de preguntas</p>
+              <button onClick={() => navigate('/Question')}>Gestionar Preguntas</button>
             </div>
           )}
         </div>
