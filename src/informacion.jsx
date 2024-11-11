@@ -1,4 +1,5 @@
 import React from 'react';
+import 'informacion.css';  
 
 const info = () => {
   return (
@@ -50,5 +51,7 @@ const info = () => {
       </tbody>
     </table>
   ;
+
+<link rel="informacion.css" href="informacion.css" />
 
 export default info;
