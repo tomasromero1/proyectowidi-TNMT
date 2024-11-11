@@ -1,10 +1,16 @@
 .h1{
-    width: 300px; 
-    height: 100px; 
     background-color: white;
     border: 1px solid black;
     text-align: center; 
     margin: 0 auto; 
+    line-height: 100px;
+    padding: 20px 0;
+    text-shadow: 3px 3px 1px black;
+}
+
+.p{
+    background-color: white;
+    border: 1px solid black;
+    text-align: center;
     margin: 0; 
-    line-height: 100px
 }
