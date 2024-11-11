@@ -8,6 +8,7 @@ import Info from './informacion';
 import Play from './play';
 import Boton from './modules/components/usuarios/Usuario';
 import UserManagement from './modules/components/CRUD/user';
+import QuestionManagement from './modules/components/CRUD/question';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             <Route path="/Play" element={<Play />} />
             <Route path="/Usuario" element={<Boton />} />
             <Route path="/User" element={<UserManagement />} />
+            <Route path="/Question" element={<QuestionManagement />} />
           </Routes>
         </div>
         <Footer />
