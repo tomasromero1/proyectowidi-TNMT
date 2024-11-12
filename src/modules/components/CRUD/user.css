@@ -12,4 +12,65 @@ table {
   button {
     margin-right: 5px;
   }
+/* Contenedor principal del formulario */
+.form-container {
+  background-color: #18be87;
+  padding: 20px;
+  border-radius: 8px;
+  border: 5px solid black;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Estilo del título del formulario */
+.form-container h3 {
+  font-size: 1.5em;
+  color: black;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* Estilo de los campos de texto para el email */
+.email-input {
+  width: 90%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1em;
+}
+
+/* Estilo del contenedor de la selección de rol */
+.role-selector {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* Estilo de la selección de rol */
+.role-select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1em;
+}
+
+/* Estilo del botón de agregar usuario */
+.add-btn {
+  background-color: black;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1em;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.add-btn:hover {
+  background-color: rgb(37, 34, 34);
+}
   
