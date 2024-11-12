@@ -6,10 +6,10 @@ import { collection, getDocs, addDoc, updateDoc, deleteDoc, doc } from 'firebase
 const UserManagement = () => {
   const [users, setUsers] = useState([]);
   const [newEmail, setNewEmail] = useState('');
+  const [newPassword, setNewPassword] = useState('');
   const [newRole, setNewRole] = useState('');
   const [editUserId, setEditUserId] = useState(null);
 
-  // Función para cargar usuarios desde Firestore
   const fetchUsers = async () => {
     const usersCollection = collection(db, "users");
     const userSnapshot = await getDocs(usersCollection);
@@ -17,29 +17,29 @@ const UserManagement = () => {
     setUsers(userList);
   };
 
-  // Función para agregar un nuevo usuario
   const addUser = async () => {
-    if (!newEmail || !newRole) {
+    if (!newEmail || !newPassword || !newRole) {
       alert('Por favor, completa todos los campos');
       return;
     }
     await addDoc(collection(db, "users"), {
       email: newEmail,
+      password: newPassword,
       role: newRole,
     });
     setNewEmail('');
+    setNewPassword('');
     setNewRole('');
-    fetchUsers(); // Refrescar lista de usuarios
+    fetchUsers(); 
   };
 
-  // Función para editar un usuario
   const startEdit = (user) => {
     setEditUserId(user.id);
     setNewEmail(user.email);
+    setNewPassword('');
     setNewRole(user.role);
   };
 
-  // Función para actualizar un usuario
   const updateUser = async () => {
     const userRef = doc(db, "users", editUserId);
     await updateDoc(userRef, {
@@ -48,15 +48,15 @@ const UserManagement = () => {
     });
     setEditUserId(null);
     setNewEmail('');
+    setNewPassword('');
     setNewRole('');
-    fetchUsers(); // Refrescar lista de usuarios
+    fetchUsers();
   };
 
-  // Función para eliminar un usuario
   const deleteUser = async (userId) => {
     const userRef = doc(db, "users", userId);
     await deleteDoc(userRef);
-    fetchUsers(); // Refrescar lista de usuarios
+    fetchUsers(); 
   };
 
   useEffect(() => {
@@ -116,7 +116,6 @@ const UserManagement = () => {
         </tbody>
       </table>
 
-      {/* Formulario para agregar nuevo usuario */}
       <div className="form-container">
         <h3>Ingresar Usuario</h3>
         <input
@@ -125,6 +124,13 @@ const UserManagement = () => {
           placeholder="Email del usuario"
           value={newEmail}
           onChange={(e) => setNewEmail(e.target.value)}
+        />
+        <input
+          type="password"
+          className="password-input"
+          placeholder="Contraseña"
+          value={newPassword}
+          onChange={(e) => setNewPassword(e.target.value)}
         />
         <div className="role-selector">
           <select
