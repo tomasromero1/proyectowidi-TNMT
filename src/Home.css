@@ -3,9 +3,10 @@ p {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.home {
-    width: 40%;
-    padding: 10px;
+.home {    
+    width: 80%;
+    height: 80px;
+    padding: 0px;
     margin: 5px auto;
     color: #000;
     background-color: #eee8e7;
@@ -24,6 +25,23 @@ p {
   font-size: 14px;
   margin: 5px;
   transition: background-color 0.3s;
+}
+
+.homee{
+    background-color: white;
+    width: 80%;
+    text-align: center;
+    padding: 8px;
+    margin: 5px auto;
+    border-radius: 20px;
+}
+
+.tex{
+    font-size: 22px;
+}
+
+button{
+    background-color: #000;
 }
 
 button a {
