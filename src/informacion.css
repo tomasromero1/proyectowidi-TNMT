@@ -1,26 +1,12 @@
-.h1{
-    background-color: white;
-    border: 1px solid black;
-    text-align: center; 
-    margin: 0 auto; 
-    line-height: 100px;
-    padding: 20px 0;
-    text-shadow: 3px 3px 1px black;
-}
-
-.p{
-    background-color: white;
-    border: 1px solid black;
+.text {
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 80%;
+    padding: 25px;
+    margin: 5px auto;
+    color: #000;
+    background-color: #eee8e7;
+    border-radius: 20px;
     text-align: center;
-    margin: 0; 
 }
 
-.h3{
-    background-color: white;
-    border: 1px solid black;
-    text-align: center; 
-    margin: 0 auto; 
-    line-height: 100px;
-    padding: 20px 0;
-    text-shadow: 3px 3px 1px black;
-}
