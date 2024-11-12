@@ -30,4 +30,54 @@
     padding: 10px;
     cursor: pointer;
   }
+
+  input[type="email"],
+  input[type="password"] {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+  }
+  
+  button {
+    padding: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+
+  form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    border: 5px solid black;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .email-input, .password-input {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+  }
+  
+  .boton{
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1em;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+
+  }
+  
   
