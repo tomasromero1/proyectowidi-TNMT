@@ -31,5 +31,5 @@ function Preguntas() {
           </ul>
         </div>
       );
-    }
-}
+    };
+};
