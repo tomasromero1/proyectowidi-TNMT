@@ -1,0 +1,7 @@
+/* Estilos para el contenedor principal */
+.pantalla-container {
+    display: flex;                /* Establece un contenedor flexible */
+    flex-direction: column;       /* Organiza los elementos en columna */
+    align-items: center;          /* Centra los elementos horizontalmente */
+    padding: 20px;               /* Espacio interno alrededor del contenedor */
+  }
