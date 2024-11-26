@@ -68,3 +68,26 @@
     background-color: #444;      /* Gris oscuro al pasar el mouse */
   }
   
+  /* Efecto al hacer clic en el botón */
+.boton-principal:active {
+    background-color: #222;      /* Gris más oscuro al hacer clic */
+  }
+  
+  /* Estilos responsivos para dispositivos móviles */
+  @media (max-width: 768px) {
+    /* Ajustes para el contenedor principal en móviles */
+    .pantalla-container {
+      padding: 10px;             /* Reduce el padding en móviles */
+    }
+  
+    /* Ajusta el ancho del contenido en móviles */
+    .contenido-container {
+      width: 95%;               /* Ocupa casi todo el ancho disponible */
+    }
+  
+    /* Ajustes para títulos en móviles */
+    .h1, .h3 {
+      line-height: normal;      /* Altura de línea normal */
+      padding: 15px 0;          /* Reduce el padding vertical */
+    }
+  }
