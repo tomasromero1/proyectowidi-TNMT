@@ -36,3 +36,10 @@
     margin: 0;
     padding: 15px;               /* Espacio interno uniforme */
   }
+
+  /* Contenedor para el contenido principal */
+.contenido-container {
+    width: 80%;                  /* Ocupa el 80% del ancho disponible */
+    max-width: 600px;            /* Ancho máximo de 600px */
+    margin: 20px 0;              /* Margen superior e inferior */
+  }
