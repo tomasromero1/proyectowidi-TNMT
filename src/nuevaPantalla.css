@@ -27,3 +27,12 @@
     padding: 20px 0;
     text-shadow: 3px 3px 1px black;
   }
+
+  /* Estilos para los párrafos */
+.p {
+    background-color: white;
+    border: 1px solid black;
+    text-align: center;
+    margin: 0;
+    padding: 15px;               /* Espacio interno uniforme */
+  }
