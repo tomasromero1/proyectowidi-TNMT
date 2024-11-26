@@ -42,4 +42,29 @@
     width: 80%;                  /* Ocupa el 80% del ancho disponible */
     max-width: 600px;            /* Ancho máximo de 600px */
     margin: 20px 0;              /* Margen superior e inferior */
+  }   
+
+  /* Contenedor para los botones */
+.botones-container {
+    display: flex;               /* Organiza los botones en línea */
+    gap: 10px;                   /* Espacio entre botones */
+    margin-top: 20px;            /* Espacio superior */
   }
+  
+  /* Estilos para los botones */
+.boton-principal {
+    padding: 10px 20px;          /* Espacio interno */
+    background-color: #000;      /* Fondo negro */
+    color: white;                /* Texto blanco */
+    border: none;                /* Sin borde */
+    border-radius: 20px;         /* Bordes redondeados */
+    cursor: pointer;             /* Cursor tipo puntero */
+    font-size: 14px;             /* Tamaño de fuente */
+    transition: background-color 0.3s; /* Transición suave del color de fondo */
+  }
+
+  /* Efecto al pasar el mouse sobre el botón */
+.boton-principal:hover {
+    background-color: #444;      /* Gris oscuro al pasar el mouse */
+  }
+  
