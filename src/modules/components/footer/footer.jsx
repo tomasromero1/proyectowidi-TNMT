@@ -25,6 +25,12 @@ export function Footer() {
                     Jugar
                 </Link>
             </div>
+            <div className="footer-button">
+                <Link to="/src/NuevaPantalla.jsx">
+                    <img src={homeIcon} alt="Inicio" className="button-icon" />
+                    NuevaPantalla
+                </Link>
+            </div>
         </footer>
     );
 }
