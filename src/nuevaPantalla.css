@@ -7,14 +7,12 @@
   }
 
 /* Estilos para el título principal (h1) */
-.h1 {
-    background-color: white;      /* Fondo blanco */
-    border: 1px solid black;      /* Borde negro de 1px */
+.h1 { 
     text-align: center;          /* Centra el texto */
     margin: 0 auto;              /* Centra el elemento horizontalmente */
-    line-height: 100px;          /* Altura de línea para centrado vertical */
+    line-height: 50px;          /* Altura de línea para centrado vertical */
     padding: 20px 0;             /* Espacio interno superior e inferior */
-    text-shadow: 3px 3px 1px black; /* Sombra del texto para efecto 3D */
+
   }  
 
   /* Estilos para los subtítulos (h3) */
@@ -23,9 +21,8 @@
     border: 1px solid black;
     text-align: center;
     margin: 0 auto;
-    line-height: 100px;
+    line-height: 50px;
     padding: 20px 0;
-    text-shadow: 3px 3px 1px black;
   }
 
   /* Estilos para los párrafos */
