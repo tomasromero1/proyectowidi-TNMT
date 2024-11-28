@@ -1,5 +1,6 @@
 import React from 'react';
 import './nuevaPantalla.css';
+import { Link } from 'react-router-dom';
 
 const NuevaPantalla = () => {
     return (
@@ -13,7 +14,11 @@ const NuevaPantalla = () => {
           </p>
         </div>
 <div className="botones-container">
-        <button className="boton-principal">Principales puntos de la Ley.</button>
+        <button className="boton-principal">
+          <Link to="/principales-puntos">
+            Principales puntos de la Ley.
+          </Link>
+          </button>
       </div>
     </div>
   );

@@ -1,6 +1,7 @@
 import React from 'react';
 import './nuevaPantalla.css';  
 const PrincipalesPuntos = () => {
+  
   return (
     <div className="pantalla-container">
       <h1 className="h1">Principales Puntos de la Ley</h1>
