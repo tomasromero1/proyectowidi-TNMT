@@ -26,8 +26,8 @@ export function Footer() {
                 </Link>
             </div>
             <div className="footer-button">
-                <Link to="/src/NuevaPantalla.jsx">
-                    <img src={homeIcon} alt="Inicio" className="button-icon" />
+                <Link to="/NuevaPantalla">
+                    <img src={homeIcon} alt="NuevaPantalla" className="button-icon" />
                     NuevaPantalla
                 </Link>
             </div>

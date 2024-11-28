@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './Home';
 import Info from './informacion';
 import Play from './play';
+import NuevaPantalla from './NuevaPantalla';
 import Boton from './modules/components/usuarios/Usuario';
 import UserManagement from './modules/components/CRUD/user';
 import QuestionManagement from './modules/components/CRUD/question';
@@ -23,6 +24,7 @@ function App() {
             <Route path="/Usuario" element={<Boton />} />
             <Route path="/User" element={<UserManagement />} />
             <Route path="/Question" element={<QuestionManagement />} />
+            <Route path="/NuevaPantalla" element={<NuevaPantalla />} />
           </Routes>
         </div>
         <Footer />

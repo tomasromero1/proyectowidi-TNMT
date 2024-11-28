@@ -8,7 +8,7 @@ const NuevaPantalla = () => {
       // Contenedor principal que envuelve toda la pantalla
       <div className="pantalla-container">
         {/* Título principal de la página */}
-        <h1 className="h1">Título Principal</h1>
+        <h1 className="h1">HOLA COMO ESTAN.</h1>
         
         {/* Contenedor para el contenido principal */}
         <div className="contenido-container">
