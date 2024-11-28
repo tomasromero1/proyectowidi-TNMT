@@ -10,6 +10,7 @@ import NuevaPantalla from './NuevaPantalla';
 import Boton from './modules/components/usuarios/Usuario';
 import UserManagement from './modules/components/CRUD/user';
 import QuestionManagement from './modules/components/CRUD/question';
+import PrincipalesPuntos from './PrincipalesPuntos'
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
             <Route path="/User" element={<UserManagement />} />
             <Route path="/Question" element={<QuestionManagement />} />
             <Route path="/NuevaPantalla" element={<NuevaPantalla />} />
+            <Route path="/principales-puntos" element={<PrincipalesPuntos />} />
           </Routes>
         </div>
         <Footer />
