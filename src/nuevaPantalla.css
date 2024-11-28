@@ -1,21 +1,18 @@
-/* Estilos para el contenedor principal */
 .pantalla-container {
-    display: flex;                /* Establece un contenedor flexible */
-    flex-direction: column;       /* Organiza los elementos en columna */
-    align-items: center;          /* Centra los elementos horizontalmente */
-    padding: 20px;               /* Espacio interno alrededor del contenedor */
+    display: flex;                
+    flex-direction: column;       
+    align-items: center;          
+    padding: 20px;               
   }
 
-/* Estilos para el título principal (h1) */
 .h1 { 
-    text-align: center;          /* Centra el texto */
-    margin: 0 auto;              /* Centra el elemento horizontalmente */
-    line-height: 50px;          /* Altura de línea para centrado vertical */
-    padding: 20px 0;             /* Espacio interno superior e inferior */
-
+    text-align: center;          
+    margin: 0 auto;             
+    line-height: 50px;          
+    padding: 20px 0;             
   }  
 
-  /* Estilos para los subtítulos (h3) */
+  
 .h3 {
     background-color: white;
     border: 1px solid black;
@@ -25,66 +22,62 @@
     padding: 20px 0;
   }
 
-  /* Estilos para los párrafos */
+  
 .p {
     background-color: white;
     border: 1px solid black;
     text-align: center;
     margin: 0;
-    padding: 15px;               /* Espacio interno uniforme */
+    padding: 15px;               
   }
 
-  /* Contenedor para el contenido principal */
+
 .contenido-container {
-    width: 80%;                  /* Ocupa el 80% del ancho disponible */
-    max-width: 600px;            /* Ancho máximo de 600px */
-    margin: 20px 0;              /* Margen superior e inferior */
+    width: 80%;                  
+    max-width: 600px;            
+    margin: 20px 0;              
   }   
 
-  /* Contenedor para los botones */
 .botones-container {
-    display: flex;               /* Organiza los botones en línea */
-    gap: 10px;                   /* Espacio entre botones */
-    margin-top: 20px;            /* Espacio superior */
+    display: flex;               
+    gap: 10px;                   
+    margin-top: 20px;            
   }
   
-  /* Estilos para los botones */
 .boton-principal {
-    padding: 10px 20px;          /* Espacio interno */
-    background-color: #000;      /* Fondo negro */
-    color: white;                /* Texto blanco */
-    border: none;                /* Sin borde */
-    border-radius: 20px;         /* Bordes redondeados */
-    cursor: pointer;             /* Cursor tipo puntero */
-    font-size: 14px;             /* Tamaño de fuente */
-    transition: background-color 0.3s; /* Transición suave del color de fondo */
+    padding: 10px 20px;          
+    background-color: #000;      
+    color: white;                
+    border: none;                
+    border-radius: 20px;         
+    cursor: pointer;             
+    font-size: 14px;             
+    transition: background-color 0.3s; 
   }
 
-  /* Efecto al pasar el mouse sobre el botón */
 .boton-principal:hover {
-    background-color: #444;      /* Gris oscuro al pasar el mouse */
+    background-color: #444;      
   }
   
-  /* Efecto al hacer clic en el botón */
+  
 .boton-principal:active {
-    background-color: #222;      /* Gris más oscuro al hacer clic */
+    background-color: #222;      
   }
   
-  /* Estilos responsivos para dispositivos móviles */
+
   @media (max-width: 768px) {
-    /* Ajustes para el contenedor principal en móviles */
     .pantalla-container {
-      padding: 10px;             /* Reduce el padding en móviles */
+      padding: 10px;             
     }
   
-    /* Ajusta el ancho del contenido en móviles */
+    
     .contenido-container {
-      width: 95%;               /* Ocupa casi todo el ancho disponible */
+      width: 95%;               
     }
   
-    /* Ajustes para títulos en móviles */
+  
     .h1, .h3 {
-      line-height: normal;      /* Altura de línea normal */
-      padding: 15px 0;          /* Reduce el padding vertical */
+      line-height: normal;      
+      padding: 15px 0;          
     }
   }

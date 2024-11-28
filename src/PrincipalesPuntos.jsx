@@ -1,6 +1,5 @@
 import React from 'react';
-import './nuevaPantalla.css';  // Puedes crear un nuevo CSS o reutilizar el existente
-
+import './nuevaPantalla.css';  
 const PrincipalesPuntos = () => {
   return (
     <div className="pantalla-container">
@@ -32,7 +31,6 @@ const PrincipalesPuntos = () => {
           </p>
         </div>
 
-        {/* Puedes agregar más puntos según necesites */}
       </div>
     </div>
   );
