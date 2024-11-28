@@ -21,7 +21,9 @@ const NuevaPantalla = () => {
         </div>
 {/* Contenedor para los botones de acción */}
 <div className="botones-container">
+  <Link to="/src/PrincipalesPuntos.jsx">
         <button className="boton-principal">Principales puntos de la Ley.</button>
+        </Link>
         <button className="boton-principal">Botón 2</button>
       </div>
     </div>
